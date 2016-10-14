@@ -6,12 +6,13 @@ public class Solver {
 	private int outTable [][];
 
 	public Solver(Sudoku input) {
+		
 		in = input;
 		outTable = in.getAll();
 	}
 
 	public Sudoku solve() throws Exception{
-
+		inputCheck();
 		do{
 			makeGues();
 		}while(step());
@@ -39,6 +40,16 @@ public class Solver {
 		check();
 		out = new Sudoku(outTable);
 		return out;
+	}
+	
+	private void inputCheck() throws Exception{
+		int numbers = 0;
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				if(outTable[i][j]!=0) numbers++;
+			}
+		}
+		 if(numbers<10)throw new Exception("not solved");
 	}
 
 	private void check() throws Exception{
