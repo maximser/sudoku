@@ -1,4 +1,6 @@
+[![Build Status](https://travis-ci.org/maximser/sudoku.svg?branch=master)](https://travis-ci.org/maximser/sudoku)
 # sudoku
+
 'sudoku solver' - solve basic 9x9 sudoku, using 3 differnt technics:
 
 >1. Singles - the method is finding the table of individuals, i.e., cells in which only one figure and no other. Record this number in the cell and excluded from other cells in that row, column, and block
